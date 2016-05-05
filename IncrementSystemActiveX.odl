@@ -1,0 +1,68 @@
+// IncrementSystemActiveX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (IncrementSystemActiveX.tlb) that will become a resource in
+// IncrementSystemActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(7D10672B-3DB7-4B0B-914C-599C7C21A585), version(1.0),
+  helpfile("IncrementSystemActiveX.hlp"),
+  helpstring("IncrementSystemActiveX ActiveX Control module"),
+  control ]
+library INCREMENTSYSTEMACTIVEXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CIncrementSystemActiveXCtrl
+
+	[ uuid(3EAB89A2-AE32-4C7C-BC81-D49DDBFA0791),
+	  helpstring("Dispatch interface for IncrementSystemActiveX Control"), hidden ]
+	dispinterface _DIncrementSystemActiveX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CIncrementSystemActiveXCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CIncrementSystemActiveXCtrl)
+			[id(1), helpstring("method noticeClient")] int NoticeClient(BSTR phoneNum);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CIncrementSystemActiveXCtrl
+
+	[ uuid(2F4676C1-4859-4B75-BB5E-024574F26697),
+	  helpstring("Event interface for IncrementSystemActiveX Control") ]
+	dispinterface _DIncrementSystemActiveXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CIncrementSystemActiveXCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CIncrementSystemActiveXCtrl
+
+	[ uuid(4EBADDBF-BE67-4F6E-A810-18A03BD1CEC8),
+	  helpstring("IncrementSystemActiveX Control"), control ]
+	coclass IncrementSystemActiveX
+	{
+		[default] dispinterface _DIncrementSystemActiveX;
+		[default, source] dispinterface _DIncrementSystemActiveXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
